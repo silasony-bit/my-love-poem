@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《陪伴》</title>
+    <style>
+        /* 引用衬线体增强书卷气 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            background-color: #1a1a1a; /* 外部环境色，模拟暗室 */
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* 书籍容器 */
+        .book-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* 电子书页面 */
+        .page {
+            width: 100%;
+            max-width: 400px;
+            height: 90vh;
+            background-color: #f4f1ea; /* 经典的瑞典轻型纸色 */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            position: relative;
+            padding: 50px 35px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 4px;
+        }
+
+        /* 模拟书籍装订线 */
+        .page::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 15px;
+            background: linear-gradient(to right, rgba(0,0,0,0.1), transparent);
+        }
+
+        /* 页码装饰 */
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 2px;
+        }
+
+        .book-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom: 15px;
+            letter-spacing: 0.2rem;
+        }
+
+        .poem-content {
+            flex: 1;
+            color: #333;
+            line-height: 2.2;
+            font-size: 1.1rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .stanza {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInPage 1.5s ease forwards;
+        }
+
+        .stanza:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInPage {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        .author {
+            margin-top: auto;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* 微信提示图标（仅美化用） */
+        .share-hint {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 10px;
+            color: #ccc;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="book-container">
+        <article class="page">
+            <div class="share-hint">Volume I</div>
+            
+            <h1 class="book-title">陪伴</h1>
+
+            <div class="poem-content">
+                <div class="stanza">
+                    <p>你无处不在，我的挚爱</p>
+                    <p>在我的副驾座上，</p>
+                    <p>在我的抽屉里，</p>
+                    <p>也在我的显示屏前。</p>
+                </div>
+
+                <div class="stanza">
+                    <p>愿你的每寸时光与天地，</p>
+                    <p>都宁静而美好。</p>
+                    <p>愿我能长久地，</p>
+                    <p>在那里与你相伴。</p>
+                </div>
+            </div>
+
+            <div class="author">— 岁月随笔</div>
+            
+            <div class="page-number">P. 01</div>
+        </article>
+    </div>
+
+</body>
+</html>
